@@ -1,36 +1,21 @@
 # geonames
 
-FIXME: description
+Combines city and country info obtained from [GeoNames] (http://geonames.org)
 
 ## Installation
 
-Download from http://example.com/FIXME.
 
 ## Usage
 
-FIXME: explanation
-
-    $ java -jar geonames-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
+    $ lein run > cities.csv
 
 ### Bugs
 
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+Probably many
 
 ## License
 
-Copyright © 2013 FIXME
+Copyright © 2013 Daniel Alberto Cañas
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
