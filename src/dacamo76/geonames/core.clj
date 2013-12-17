@@ -37,12 +37,10 @@
     [name, state, country, lat, lon]))
 
 (defn -main
-  "I don't do a whole lot ... yet."
   [& args]
-  (let [admin-codes (util/key-by :fips (admin/admin-codes admin/admin-codes-file))
+  (let [admin-codes (util/key-by :fips (admin/admin-codes admin/admin-codes-url))
         country-codes (util/key-by :iso (country/country-codes country/country-codes-url))
-        cities (util/read-tsv (io/reader city/cities-file))
         admin-fn (partial admin-name admin-codes)
         country-fn (partial country-name country-codes)]
     (util/write-csv (map (partial city-fields country-fn admin-fn)
-                        cities))))
+                         (city/cities city/cities-url)))))

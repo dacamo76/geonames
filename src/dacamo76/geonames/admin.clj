@@ -5,8 +5,6 @@
 (def admin-codes-url
   "http://download.geonames.org/export/dump/admin1CodesASCII.txt")
 
-(def admin-codes-file "admin1CodesASCII.txt")
-
 (def header
   [:fips :name :asciiname :geonameid])
 

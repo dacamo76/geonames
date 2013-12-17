@@ -1,11 +1,13 @@
 (ns dacamo76.geonames.city
-  (:require [clojure.java.io :as io]))
+  (:require [clojure.java.io :as io]
+            [dacamo76.geonames.util :as util]))
 
 (def cities-url
   "http://download.geonames.org/export/dump/cities1000.zip")
 
-(def cities-file
-  "cities1000.txt")
+(defn cities
+  [x]
+  (util/read-tsv (util/zip-reader x)))
 
 (defn admin1-code
   [s]

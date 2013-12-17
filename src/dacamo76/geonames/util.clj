@@ -15,14 +15,6 @@
   [& s]
   (string/join "." s))
 
-(defn slurp-tsv
-  [x]
-  (->> x 
-       slurp
-       string/split-lines
-       (map string/trim)
-       (map split-tabs)))
-
 (defn comment?
   [s]
   (.startsWith s "#"))
@@ -31,9 +23,29 @@
   [f coll]
   (into {} (map #(vector (f %) %) coll)))
 
+(defn- input-stream->zip-input-stream
+  [x]
+  (let [zis (java.util.zip.ZipInputStream. x)
+        _ (.getNextEntry zis)]
+    zis))
+
+(defn zip-reader
+  [x]
+  (let [is (io/input-stream x)
+        zis (input-stream->zip-input-stream is)
+        reader (io/reader zis)]
+    reader))
+
+(defn slurp-tsv
+  [x]
+  (->> x
+       slurp
+       string/split-lines
+       (map string/trim)
+       (map split-tabs)))
+
 (defn read-tsv
   [reader]
-;  (csv/read-csv input :separator \tab))
   (let [lines (line-seq reader)]
     (map split-tabs lines)))
 
