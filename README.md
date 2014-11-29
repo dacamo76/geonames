@@ -4,17 +4,12 @@ Combines current city and country info obtained from [GeoNames] (http://geonames
 Currently only prints city, state, country, latitude and longitude as CSV to STDOUT.
 
 ```
-$ lein run | head
+$ lein run | head -n5
 El Tarter,Canillo,Andorra,42.57952,1.65362
 Sant Julià de Lòria,Sant Julià de Loria,Andorra,42.46372,1.49129
 Pas de la Casa,Encamp,Andorra,42.54277,1.73361
 Ordino,Ordino,Andorra,42.55623,1.53319
 les Escaldes,Escaldes-Engordany,Andorra,42.50729,1.53414
-la Massana,La Massana,Andorra,42.54499,1.51483
-Encamp,Encamp,Andorra,42.53474,1.58014
-Canillo,Canillo,Andorra,42.5676,1.59756
-Arinsal,La Massana,Andorra,42.57205,1.48453
-Andorra la Vella,Andorra la Vella,Andorra,42.50779,1.52109
 ```
 
 As of November 28 2014, there are 143,356 cities in the database.
