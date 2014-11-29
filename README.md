@@ -34,7 +34,7 @@ cities1000.zip      | 6.7M |  Main geoname table. All cities with a population g
 admin1CodesASCII.txt  | 135K | Name of administrative divisions (In US this is state)
 countryInfo.txt  | 31K | Name of countries
 
-The admin1CodesASCII and countryInfo files are used to map the codes found in the main geoname table to their text representation.
+The admin1CodesASCII and countryInfo files are used to map the codes found in the main geoname table to their text representation. See [GeoNames Download README] (http://download.geonames.org/export/dump/readme.txt) for more information.
 
 
 ### Bugs
